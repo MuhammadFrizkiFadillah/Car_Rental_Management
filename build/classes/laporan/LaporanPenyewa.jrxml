@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LaporanPenyewa" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1aa7be16-9590-4e52-b33b-8781b9a244e3">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL_RentalMobil"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+    kode_penyewa,
+    nama,
+    alamat,
+    no_hp
+FROM penyewa
+WHERE is_deleted = 0
+ORDER BY nama]]>
+	</queryString>
+	<field name="kode_penyewa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="kode_penyewa"/>
+		<property name="com.jaspersoft.studio.field.label" value="kode_penyewa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="penyewa"/>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nama"/>
+		<property name="com.jaspersoft.studio.field.label" value="nama"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="penyewa"/>
+	</field>
+	<field name="alamat" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="alamat"/>
+		<property name="com.jaspersoft.studio.field.label" value="alamat"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="penyewa"/>
+	</field>
+	<field name="no_hp" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="no_hp"/>
+		<property name="com.jaspersoft.studio.field.label" value="no_hp"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="penyewa"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="84" splitType="Stretch">
+			<image scaleImage="FillFrame" isUsingCache="false">
+				<reportElement x="178" y="-10" width="199" height="84" uuid="512c7964-8a74-4a37-abdf-e79e40f55a8d"/>
+				<imageExpression><![CDATA["D:/Documents/NetBeansProjects/RentalMobil/src/image/content_background.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="139" y="54" width="277" height="30" uuid="a57df123-d572-4c29-a743-642dbfc19982"/>
+				<textElement>
+					<font size="20" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA PENYEWA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="22" uuid="980c6f8a-c90a-42d4-a824-e448f436d7ab"/>
+				<textElement textAlignment="Left">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Kode Penyewa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="154" y="0" width="100" height="22" uuid="0f3680d4-4c2d-43e3-b620-6c9357a6251e"/>
+				<textElement textAlignment="Left">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="317" y="0" width="100" height="22" uuid="90e1b553-6b50-4c17-bf9b-8c019942a9e4"/>
+				<textElement textAlignment="Left">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="0" width="100" height="22" uuid="d540dbe9-eec2-46ad-81e0-55c51c79db0a"/>
+				<textElement textAlignment="Left">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[No HP]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="5c34b9b4-4320-4a48-8821-ebcdc8c2ce8b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b2a7a863-f85a-41e5-a44e-3c591dad8f24"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{kode_penyewa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="154" y="1" width="100" height="20" uuid="af4093ff-7f63-4ada-b2ca-1ca55de6544e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ffb2c1b0-9d0d-4587-b0c4-9a6f720fc8fb"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="317" y="0" width="100" height="20" uuid="ec39d492-8635-4dc2-8554-1070d5f9f73c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="15fd00a9-074c-4096-9348-5a63a838b226"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{alamat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="475" y="0" width="100" height="20" uuid="c228e575-1ef2-40e0-8fb4-1079b000fcec">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="58b1a4df-82e3-4fd3-85af-4c0f82c31cd1"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{no_hp}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

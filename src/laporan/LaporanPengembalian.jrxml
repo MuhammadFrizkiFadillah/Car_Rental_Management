@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LaporanPengembalian" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="84f1e2bb-91bd-4e6e-a2a3-f2f4a597baa1">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL_RentalMobil"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+    pg.kode_pengembalian,
+    ps.kode_sewa,
+    pg.tanggal_kembali,
+    pg.hari_terlambat,
+    pg.total_denda
+FROM pengembalian pg
+JOIN penyewaan ps
+    ON pg.id_sewa = ps.id_sewa
+WHERE pg.is_deleted = 0
+ORDER BY pg.tanggal_kembali DESC]]>
+	</queryString>
+	<field name="kode_pengembalian" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="kode_pengembalian"/>
+		<property name="com.jaspersoft.studio.field.label" value="kode_pengembalian"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pengembalian"/>
+	</field>
+	<field name="kode_sewa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="kode_sewa"/>
+		<property name="com.jaspersoft.studio.field.label" value="kode_sewa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="penyewaan"/>
+	</field>
+	<field name="tanggal_kembali" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="tanggal_kembali"/>
+		<property name="com.jaspersoft.studio.field.label" value="tanggal_kembali"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pengembalian"/>
+	</field>
+	<field name="hari_terlambat" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="hari_terlambat"/>
+		<property name="com.jaspersoft.studio.field.label" value="hari_terlambat"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pengembalian"/>
+	</field>
+	<field name="total_denda" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="total_denda"/>
+		<property name="com.jaspersoft.studio.field.label" value="total_denda"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pengembalian"/>
+	</field>
+	<group name="kode_pengembalian">
+		<groupExpression><![CDATA[$F{kode_pengembalian}]]></groupExpression>
+	</group>
+	<group name="kode_sewa">
+		<groupExpression><![CDATA[$F{kode_sewa}]]></groupExpression>
+	</group>
+	<group name="tanggal_kembali">
+		<groupExpression><![CDATA[$F{tanggal_kembali}]]></groupExpression>
+	</group>
+	<group name="hari_terlambat">
+		<groupExpression><![CDATA[$F{hari_terlambat}]]></groupExpression>
+	</group>
+	<group name="total_denda">
+		<groupExpression><![CDATA[$F{total_denda}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="84" splitType="Stretch">
+			<image scaleImage="FillFrame" isUsingCache="false">
+				<reportElement x="178" y="-10" width="199" height="84" uuid="2fa01203-3ef0-45da-8cf8-872521874c68"/>
+				<imageExpression><![CDATA["D:/Documents/NetBeansProjects/RentalMobil/src/image/content_background.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="112" y="54" width="331" height="30" uuid="76f7fb62-136a-49bc-8084-24110103b0fb"/>
+				<textElement>
+					<font size="20" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA PENGEMBALIAN]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="4" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="9a5ee347-ec0b-4105-b6f1-4efd6fffd2bb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ffa9ca3a-6038-4c39-bc56-8a483a0aff05"/>
+				</reportElement>
+				<text><![CDATA[Kode Pengembalian]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="0" width="100" height="30" uuid="0fa8648f-5233-41e1-a498-b899a06a3b1e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1f70b481-7e19-415b-b8af-a152e27af03e"/>
+				</reportElement>
+				<text><![CDATA[Kode Sewa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="1" width="100" height="30" uuid="ad9fbabf-d2f4-49ad-9500-9b8499f15456">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="875cf9ad-220b-4484-8609-4df6f8bf65cf"/>
+				</reportElement>
+				<text><![CDATA[Tanggal Kembali]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="1" width="100" height="30" uuid="f7927014-f6a9-4d4f-8240-aa1a6503ae05">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d622b8e7-2131-4925-97ce-164cedc09b12"/>
+				</reportElement>
+				<text><![CDATA[Hari Terlambat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="1" width="100" height="30" uuid="33246c7f-949e-4df7-92ff-c4fac2875730">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c6db3f9d-0e16-4b7b-b641-79a147682fde"/>
+				</reportElement>
+				<text><![CDATA[Total Denda]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="1d829933-5cb4-4184-b6e3-4f7a98723912">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ffa9ca3a-6038-4c39-bc56-8a483a0aff05"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{kode_pengembalian}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="0" width="100" height="30" uuid="5e1a30be-c325-48b9-bac1-fbef1ad5a4bf">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1f70b481-7e19-415b-b8af-a152e27af03e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{kode_sewa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="0" width="100" height="30" uuid="4215f22f-807b-49c5-8a55-9e077bf70f0f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="875cf9ad-220b-4484-8609-4df6f8bf65cf"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{tanggal_kembali}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="0" width="100" height="30" uuid="55f3679d-c85b-4e07-8a66-bb8a31b634f4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d622b8e7-2131-4925-97ce-164cedc09b12"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{hari_terlambat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="0" width="100" height="30" uuid="e2dd3c8d-4272-4e57-8945-a32bef43cfca">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c6db3f9d-0e16-4b7b-b641-79a147682fde"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{total_denda}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

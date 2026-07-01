@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LaporanPenyewaan" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b8d84bfd-be94-4e87-b592-a17c88562978">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL_RentalMobil"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[SELECT
+    ps.kode_sewa,
+    py.nama,
+    k.merk,
+    k.model,
+    ps.tanggal_sewa,
+    ps.tanggal_jatuh_tempo,
+    ps.lama_sewa,
+    ps.total_bayar
+FROM penyewaan ps
+JOIN penyewa py
+    ON ps.id_penyewa = py.id_penyewa
+JOIN kendaraan k
+    ON ps.id_kendaraan = k.id_kendaraan
+WHERE ps.is_deleted = 0
+ORDER BY ps.tanggal_sewa DESC]]>
+	</queryString>
+	<field name="kode_sewa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="kode_sewa"/>
+		<property name="com.jaspersoft.studio.field.label" value="kode_sewa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="penyewaan"/>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nama"/>
+		<property name="com.jaspersoft.studio.field.label" value="nama"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="penyewa"/>
+	</field>
+	<field name="merk" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="merk"/>
+		<property name="com.jaspersoft.studio.field.label" value="merk"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="kendaraan"/>
+	</field>
+	<field name="model" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="model"/>
+		<property name="com.jaspersoft.studio.field.label" value="model"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="kendaraan"/>
+	</field>
+	<field name="tanggal_sewa" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="tanggal_sewa"/>
+		<property name="com.jaspersoft.studio.field.label" value="tanggal_sewa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="penyewaan"/>
+	</field>
+	<field name="tanggal_jatuh_tempo" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="tanggal_jatuh_tempo"/>
+		<property name="com.jaspersoft.studio.field.label" value="tanggal_jatuh_tempo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="penyewaan"/>
+	</field>
+	<field name="lama_sewa" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="lama_sewa"/>
+		<property name="com.jaspersoft.studio.field.label" value="lama_sewa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="penyewaan"/>
+	</field>
+	<field name="total_bayar" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="total_bayar"/>
+		<property name="com.jaspersoft.studio.field.label" value="total_bayar"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="penyewaan"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="84" splitType="Stretch">
+			<image scaleImage="FillFrame" isUsingCache="false">
+				<reportElement x="143" y="-10" width="199" height="84" uuid="3500193b-c58c-4f7f-a1b5-49fefda6ac7b"/>
+				<imageExpression><![CDATA["D:/Documents/NetBeansProjects/RentalMobil/src/image/content_background.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="105" y="50" width="304" height="30" uuid="224dba4d-ab66-4070-8a8c-3a72c20abd06"/>
+				<textElement>
+					<font size="20" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA PENYEWAAN]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="1" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="59" height="30" uuid="5361c1fb-f7c9-4e07-9163-c0aff10c09a8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0aaebe70-887e-4278-84ad-7beac1427598"/>
+				</reportElement>
+				<text><![CDATA[Kode Sewa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="0" width="68" height="30" uuid="42170ded-9914-4039-995b-c06e0e1da000">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="121d343c-b863-4851-a1bd-13fb185bd616"/>
+				</reportElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="0" width="59" height="30" uuid="7635d46a-04f1-4484-a720-01c59137167d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5fe30401-94d2-404f-98c0-b1dc765c0149"/>
+				</reportElement>
+				<text><![CDATA[Merk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="0" width="45" height="30" uuid="281634b7-78b0-4a87-ba80-c77de6e757f2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cd478802-d530-48d0-88a8-11e368bc27b7"/>
+				</reportElement>
+				<text><![CDATA[Model]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="0" width="63" height="30" uuid="a023a699-5652-4683-8991-40544c56fa75">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b1b65fc9-61ff-41d3-94cb-1a8347ecb598"/>
+				</reportElement>
+				<text><![CDATA[Tanggal Sewa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="0" width="70" height="30" uuid="f40d21fb-1603-4181-914a-e6d57cded61b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8a38a0a3-a066-40f7-8fc3-ad17be3a0551"/>
+				</reportElement>
+				<text><![CDATA[Tanggal Jatuh Tempo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="40" height="30" uuid="7f4ca02b-c160-44f3-a2b1-b07a3fd370fb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8efaf453-f9b6-4db0-9ba7-64b7290dc457"/>
+				</reportElement>
+				<text><![CDATA[Lama Sewa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="0" width="80" height="30" uuid="9fec0e83-9536-4dae-a2c1-92367f164955">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="17455e2f-879e-4317-b58c-17df95aea0f5"/>
+				</reportElement>
+				<text><![CDATA[Total Bayar]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="59" height="30" uuid="a609c72e-1cc5-4332-84ea-90d07bdf5d54">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0aaebe70-887e-4278-84ad-7beac1427598"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{kode_sewa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="0" width="68" height="30" uuid="1264581b-8b04-479b-984a-59b0b9d9e0fe">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="121d343c-b863-4851-a1bd-13fb185bd616"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="0" width="59" height="30" uuid="c56d483b-84b0-417f-9b2a-ec2223c76396">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5fe30401-94d2-404f-98c0-b1dc765c0149"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{merk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="0" width="46" height="30" uuid="0ebbeff2-35b0-407e-bbe4-de1b04137e0b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cd478802-d530-48d0-88a8-11e368bc27b7"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{model}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="0" width="63" height="30" uuid="04e4e574-4fd3-435d-a2b0-34c94b21dd06">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b1b65fc9-61ff-41d3-94cb-1a8347ecb598"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{tanggal_sewa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="0" width="70" height="30" uuid="9cc95a31-8ca0-4f9a-8624-abc68d8cefd5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8a38a0a3-a066-40f7-8fc3-ad17be3a0551"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{tanggal_jatuh_tempo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="0" width="40" height="30" uuid="272098ea-2eb0-43e4-a5ce-627a5363fd89">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8efaf453-f9b6-4db0-9ba7-64b7290dc457"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{lama_sewa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="0" width="80" height="30" uuid="8989f0f8-42fc-4784-8122-2e50a5408eb7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="17455e2f-879e-4317-b58c-17df95aea0f5"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{total_bayar}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
