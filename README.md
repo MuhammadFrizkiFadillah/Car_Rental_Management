@@ -1,5 +1,4 @@
 ﻿# Car_Rental_Management
-# Car Rental Management
 
 Desktop-based Car Rental Management System developed using **Java Swing**, **MySQL**, and the **Object-Oriented Programming (OOP)** approach. This application was created as the final project for the **Object-Oriented Programming II** course.
 
