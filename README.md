@@ -125,19 +125,6 @@ The database stores:
 
 ---
 
-## Developers
-
-**Group 4**
-
-* Muhammad Frizki Fadillah
-* Muhammad Pratama Nurdiansyah
-* Monica Marcelina Fadzrin
-* Raden Mochammad Luthfi Arbilly Ismail Poetra
-* Rayhan Muhammad Ramdan
-* Rifki Padilah
-
----
-
 **Course**
 
 Object-Oriented Programming II
